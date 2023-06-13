@@ -1,4 +1,8 @@
 ![Mecademic](./logo/mecademic_logo.jpg  "Mecademic")
+
+**Unofficial ROS Package for Meca500**
+
+
 # Mecademic ROS package
 
 NOTE: **This package uses an old version of the Python driver and is no longer supported. We currently do not have a ROS package that is being actively developed and tested**
