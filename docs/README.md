@@ -1,6 +1,6 @@
 ![Mecademic](./logo/mecademic_logo.jpg  "Mecademic")
 
-**Unofficial ROS Package for Meca500**
+**Unofficial ROS-Noetic Package for Meca500**
 
 
 # Mecademic ROS package
@@ -13,9 +13,9 @@ A ROS package that can be built on to create ROS projects that can communicate w
 
  * Meca500 R3
 
-#### Supported ROS distros
+#### Working ROS distro
 
-* Melodic
+* Noetic
 
 ## Getting Started
 
