@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: mecademic_description
+    relative_path: urdf/meca_500_r3.xacro
+    xacro_args: ""
+  SRDF:
+    relative_path: config/meca_500_r3.srdf
+  CONFIG:
+    author_name: Tomas
+    author_email: tomas.coleman@imr.ie
+    generated_timestamp: 1622112408

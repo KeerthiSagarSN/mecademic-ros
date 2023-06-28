@@ -1,0 +1,22 @@
+<launch>
+    <arg name="paused" default="false"/>
+
+    <!-- Load the Meca500 URDF model into the parameter server -->
+    
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="worlds/empty.world"/>
+        <arg name="gui" value="true"/>
+        <arg name="paused" value="$(arg paused)"/>
+    </include>
+    <!-- Spawn a CougarBot in Gazebo, taking the description from the
+    parameter server -->
+    <include file="$(find mecademic_gazebo)/launch/load_meca_500_r3.launch" />
+
+    <node name="meca_500_r3_spawn" pkg="gazebo_ros" type="spawn_model" output="screen" args="-urdf -param robot_description -model meca_500_r3_gazebo" />
+
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+  output="screen">
+  </node>
+
+  <include file="$(find mecademic_gazebo)/launch/meca_500_control.launch"/>
+</launch>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+  <include file="$(find mecademic_description)/launch/meca_500_r3.launch"/>
+
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find mecademic_viz)/rviz/model.rviz" />
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
+    <remap from="joint_states" to="MecademicRobot_joint_fb" />
+  </node>
+  <!-- <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui">
+    <remap from="joint_states" to="MecademicRobot_joint" />
+    <param name="use_gui" value="true" />
+  </node> -->
+</launch>
+

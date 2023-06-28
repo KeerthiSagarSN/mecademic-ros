@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+  <rosparam command="load" file="$(find mecademic_viz)/config/joint_zeros.yaml" />
+  <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui">
+    <remap from="joint_states" to="MecademicRobot_joint" />
+  </node>
+
+  
+</launch>

@@ -16,12 +16,6 @@
           <mesh filename="package://mecademic_description/meshes/meca_500_r3_base_collision.stl" />
         </geometry>
       </collision>
-      <inertial>
-        <mass value="1.0"/>
-        <origin rpy="0 0 0" xyz="0 0 0.0"/>
-        <inertia ixx="1.0" iyy="0.0" izz="0.0"
-                ixy="1.0" ixz="0" iyz="1.0"/>
-      </inertial>
     </link>
 
     <!-- Joint 1 -->
@@ -209,10 +203,10 @@
       <limit effort="10.0" velocity="8.72665" lower="-3.14159" upper="3.14159" />
     </joint>
 
-    <link name="${prefix}tool0"/>
-    <joint name="${prefix}meca_axis_6_joint-tool0" type="fixed">
+    <link name="${prefix}tool_meca"/>
+    <joint name="${prefix}meca_axis_6_joint-tool_meca" type="fixed">
       <parent link="${prefix}meca_axis_6_link"/>
-      <child link="${prefix}tool0"/>
+      <child link="${prefix}tool_meca"/>
       <origin xyz="0.075 0 0" rpy="0 ${radians(90)} 0"/>
     </joint>
   </xacro:macro>

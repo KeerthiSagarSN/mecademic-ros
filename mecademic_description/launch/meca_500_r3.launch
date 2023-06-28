@@ -1,9 +1,7 @@
 <?xml version="1.0"?>
 <launch>
-  
-  
-  <param name="robot_description" command="$(find xacro)/xacro '$(find mecademic_description)/urdf/meca_500_r3.xacro'" />
-  
-  
+   
+  <param name="robot_description_2" command="$(find xacro)/xacro '$(find mecademic_description)/urdf/meca_500_r3.xacro'" />
+   
   
 </launch>

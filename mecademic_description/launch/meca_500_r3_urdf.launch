@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<launch> 
+
+<!--param name="robot_description" command="$(find xacro)/xacro '$(find kuka_kr4_support)/urdf/kr4r600.xacro'"/ I edited this to urdf file--> 
+<param name="robot_description" command="$(find xacro)/xacro '/home/imr/catkin_dual_arm_ws/src/mecademic-ros/mecademic_description/urdf/meca_500_r3.xacro'"/> 
+   <!-- Load controllers -->
+    <!-- Load robot state publisher -->
+  <node name="robot_state_publisher_meca" pkg="robot_state_publisher" type="robot_state_publisher">
+    <remap from="joint_states" to="MecademicRobot_joint_fb" />
+  </node>
+  <node pkg="tf" type="static_transform_publisher" name="kuka_to_meca_tf" args="-0.2 0.4 0 0 0 0 base_link meca_base_link 100" />
+
+</launch>

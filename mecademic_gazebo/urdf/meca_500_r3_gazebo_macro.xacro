@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+<xacro:include filename="$(find mecademic_description)/urdf/meca_500_r3_macro.xacro"/>
+<xacro:macro name="meca_500_r3_gazebo" params="prefix">
+
+  <!-- get base meca500 model -->
+  <xacro:meca_500_r3 prefix="${prefix}" />
+
+  <!-- transmission list -->
+  <transmission name="${prefix}tran1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="${prefix}meca_axis_1_joint">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="${prefix}motor1">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="${prefix}tran2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="${prefix}meca_axis_2_joint">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="${prefix}motor2">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="${prefix}tran3">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="${prefix}meca_axis_3_joint">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="${prefix}motor3">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="${prefix}tran4">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="${prefix}meca_axis_4_joint">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="${prefix}motor4">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="${prefix}tran5">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="${prefix}meca_axis_5_joint">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="${prefix}motor5">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="${prefix}tran6">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="${prefix}meca_axis_6_joint">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="${prefix}motor6">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!-- end of transmission list -->
+
+  <!-- Gazebo-specific link properties -->
+  <gazebo reference="${prefix}meca_base_link">
+    <material>Gazebo/Black</material>
+    <turnGravityOff>true</turnGravityOff>
+  </gazebo>
+  <gazebo reference="${prefix}meca_axis_1_link">
+    <material>Gazebo/Gray</material>
+    <turnGravityOff>true</turnGravityOff>
+  </gazebo>
+  <gazebo reference="${prefix}meca_axis_2_link">
+    <material>Gazebo/Gray</material>
+    <turnGravityOff>true</turnGravityOff>
+  </gazebo>  
+  <gazebo reference="${prefix}meca_axis_3_link">
+    <material>Gazebo/Gray</material>
+    <turnGravityOff>true</turnGravityOff>
+  </gazebo>
+  <gazebo reference="${prefix}meca_axis_4_link">
+    <material>Gazebo/Gray</material>
+    <turnGravityOff>true</turnGravityOff>
+  </gazebo>
+  <gazebo reference="${prefix}meca_axis_5_link">
+    <material>Gazebo/Gray</material>
+    <turnGravityOff>true</turnGravityOff>
+  </gazebo>
+  <gazebo reference="${prefix}meca_axis_6_link">
+    <material>Gazebo/Black</material>
+    <turnGravityOff>true</turnGravityOff>
+  </gazebo>
+
+  <!-- ros_control plugin -->
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <!-- <robotNamespace>/meca_500_r3_gazebo</robotNamespace> -->
+      <!-- <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType> -->
+    </plugin>
+  </gazebo>  
+
+  </xacro:macro>
+</robot>

@@ -4,7 +4,7 @@
 <!-- |    EDITING THIS FILE BY HAND IS NOT RECOMMENDED                                 | -->
 <!-- =================================================================================== -->
 <robot name="meca_500_r3">
-  <link name="dummy">
+  <link name="dummy_meca">
   </link>
   <link name="meca_base_link">
     <visual>
@@ -187,7 +187,7 @@
     <axis xyz="1 0 0"/>
     <limit effort="10.0" lower="-3.14159" upper="3.14159" velocity="8.72665"/>
   </joint>
-  <link name="tool0"/>
+  <link name="tool_meca"/>
   <joint name="meca_axis_6_joint-tool0" type="fixed">
     <parent link="meca_axis_6_link"/>
     <child link="tool0"/>
